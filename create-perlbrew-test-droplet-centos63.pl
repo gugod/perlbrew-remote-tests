@@ -18,9 +18,6 @@ my $perlbrew_test_droplet = first_value { $_->{name} eq "perlbrew-test" } @{ $oc
 if ($perlbrew_test_droplet) {
     say "+++ perlbrew-test already activated";
     say Mojo::JSON->encode( $perlbrew_test_droplet );
-
-    $ocean->destroy_droplet( droplet_id => $perlbrew_test_droplet->{id} );
-
 }
 else {
     say "+++ Create perlbrew-test droplet";
